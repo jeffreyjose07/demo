@@ -44,4 +44,10 @@ public class PersonController {
         personService.deleteAll();
         return "Deleted all records";
     }
+
+    @GetMapping(value = "/delete")
+    public String deleteByname(@RequestParam String firstName){
+        personService.delete(firstName);
+        return "Deleted record :"+ firstName;
+    }
 }
