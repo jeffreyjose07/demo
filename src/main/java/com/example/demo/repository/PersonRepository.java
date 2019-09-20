@@ -7,8 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.List;
 
 @EnableMongoRepositories
-public interface PersonRepository extends MongoRepository<Person,String> {
-    public Person findByFirstName(String firstName);
-    public List<Person> findByAge(int age);
+public interface PersonRepository extends MongoRepository<Person, String> {
+
+  public Person findByFirstName(String firstName);
+
+  public List<Person> findByAge(int age);
 
 }

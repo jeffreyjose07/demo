@@ -11,43 +11,45 @@ import java.util.List;
 @RequestMapping(value = "/rest")
 public class PersonController {
 
-    @Autowired
-    private PersonService personService;
+  @Autowired
+  private PersonService personService;
 
-    @PostMapping(value = "/create")
-    public Person create(@RequestParam String id, @RequestParam String firstName, @RequestParam String lastName, @RequestParam int age){
-        return personService.create(id, firstName, lastName, age);
-    }
+  @PostMapping(value = "/create")
+  public Person create(@RequestParam String id, @RequestParam String firstName,
+      @RequestParam String lastName, @RequestParam int age) {
+    return personService.create(id, firstName, lastName, age);
+  }
 
-    @GetMapping(value = "/all")
-    public List<Person> getAll(){
-        return personService.getAll();
-    }
+  @GetMapping(value = "/all")
+  public List<Person> getAll() {
+    return personService.getAll();
+  }
 
-    @GetMapping(value = "/getByName")
-    public Person getPerson(@RequestParam String firstName){
-        return personService.getByFirstName(firstName);
-    }
+  @GetMapping(value = "/getByName")
+  public Person getPerson(@RequestParam String firstName) {
+    return personService.getByFirstName(firstName);
+  }
 
-    @GetMapping(value = "/getByAge")
-    public List<Person> getPersonsByAge(@RequestParam int age){
-        return personService.getByAge(age);
-    }
+  @GetMapping(value = "/getByAge")
+  public List<Person> getPersonsByAge(@RequestParam int age) {
+    return personService.getByAge(age);
+  }
 
-    @PostMapping(value = "/update")
-    public Person update(@RequestParam String firstName, @RequestParam String lastName, @RequestParam int age){
-        return personService.update(firstName, lastName, age);
-    }
+  @PostMapping(value = "/update")
+  public Person update(@RequestParam String firstName, @RequestParam String lastName,
+      @RequestParam int age) {
+    return personService.update(firstName, lastName, age);
+  }
 
-    @GetMapping(value = "/deleteAll")
-    public String deleteAll(){
-        personService.deleteAll();
-        return "Deleted all records";
-    }
+  @GetMapping(value = "/deleteAll")
+  public String deleteAll() {
+    personService.deleteAll();
+    return "Deleted all records";
+  }
 
-    @GetMapping(value = "/delete")
-    public String deleteByname(@RequestParam String firstName){
-        personService.delete(firstName);
-        return "Deleted record :"+ firstName;
-    }
+  @GetMapping(value = "/delete")
+  public String deleteByname(@RequestParam String firstName) {
+    personService.delete(firstName);
+    return "Deleted record :" + firstName;
+  }
 }
