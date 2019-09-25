@@ -7,5 +7,4 @@ import org.junit.runner.RunWith;
 @RunWith(Karate.class)
 @CucumberOptions(features = "/home/jeffrey/demo/src/test/resources/UserTests.feature")
 public class TestRunner {
-
 }
